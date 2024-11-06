@@ -1,9 +1,9 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import ButtonCustom from "../../components/Button/ButtonCustom";
-// import ButtonGoogle from "../../components/Button/ButtonGoogle";
+import ButtonGoogle from "../../components/Button/ButtonGoogle";
 import InputCustom from "../../components/Input/InputCustom";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function AccountForm() {
     const validationSchema = Yup.object({
@@ -13,7 +13,6 @@ export default function AccountForm() {
             .min(8, "Password must be at least 8 characters")
             .required("Password is required"),
         accountName: Yup.string()
-            .min(3, "Account name needs at least 3 characters")
             .required("Account name is required")
     });
 
@@ -60,9 +59,7 @@ export default function AccountForm() {
                                 <ErrorMessage name="accountName" component="div" className="text-red-500 mt-1" />
                             </div>
                         </div>
-                        
                     </div>
-                    <ButtonCustom content="Continue >" type="submit"  />
                 </div>
                 <div className='w-5/12' style={{ backgroundColor: "#585afa" }}>
                     <img src="https://dapulse-res.cloudinary.com/image/upload/monday_platform/signup/signup-right-side-assets-new-flow/set-up-your-account.png" alt="Set up your account" />

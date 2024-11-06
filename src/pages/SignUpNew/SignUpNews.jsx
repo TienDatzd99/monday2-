@@ -67,7 +67,7 @@ const SignUpNews = () => {
                     </div>
 
                     <div className='image_signup w-5/12' style={{ backgroundColor: "#585afa" }}>
-                        <img className="my-60" src="/public/1692552403544.png" alt="signup" />
+                        <img className="my-60 h-6" src="/public/1692552403544.png" alt="signup" />
                     </div>
                 </Form>
    
