@@ -23,10 +23,17 @@ const TableBoardDemo = ({ data, className }) => {
       // Phần render bị cắt, giả sử là render một text đơn giản
       render: text => text,
     },
+    {
+      title: <div className={shapeObject}></div>,
+      dataIndex: 'name',
+      key: 'name',
+      // Phần render bị cắt, giả sử là render một text đơn giản
+      render: text => text,
+    },
   ];
 
   return (
-    <Table columns={columns} dataSource={data} className={className} />
+    <Table columns={columns} pagination={false} dataSource={data} className={className} />
   );
 };
 export default TableBoardDemo

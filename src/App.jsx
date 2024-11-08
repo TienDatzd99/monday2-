@@ -1,5 +1,5 @@
 import useRoutesCustom from './routes/useRoutesCustom'
-import './index.css';
+import './index.scss';
 
 function App() {
 const routes = useRoutesCustom()

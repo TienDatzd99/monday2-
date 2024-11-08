@@ -81,7 +81,7 @@ const CreatBoardTemplate = () => {
                 </div>
             </div>
 
-            <div className="w-1/2 bg-orange-300">
+            <div className="w-1/2 bg-orange-300 flex items-center justify-center">
                 <LayoutViewBoard
                     nameBoard={nameBoard}
                     handleChangeNameBoard={handleChangeNameBoard}

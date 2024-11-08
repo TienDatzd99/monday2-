@@ -6,6 +6,7 @@ const LayoutViewBoard = ({ nameBoard }) => {
   const data = [
     { name: '123' },
     { name: '123' },
+    { name: '123' },
     { name: '' },
   ];
 

@@ -66,8 +66,8 @@ const SignUpNews = () => {
                         </div>
                     </div>
 
-                    <div className='image_signup w-5/12' style={{ backgroundColor: "#585afa" }}>
-                        <img className="my-60 h-6" src="/public/1692552403544.png" alt="signup" />
+                    <div className='image_signup w-5/12 flex items-center' style={{ backgroundColor: "#585afa" }}>
+                        <img className="" src="/public/1692552403544.png" alt="signup" />
                     </div>
                 </Form>
    
