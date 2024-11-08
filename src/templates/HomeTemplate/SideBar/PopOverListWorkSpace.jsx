@@ -38,7 +38,7 @@ const PopOverListWorkSpace = () => {
                 return <button key={index} className=' flex  flex-1 space-x-2 items-center p-1 hover:bg-gray-200 rounded-md  mt-2'>
 
                     <div className='relative'>
-                        <Avatar shape="square" size={20} className='bg-blue-800 ml-2'>
+                        <Avatar shape="square" size={20} className={`${item.color} ml-2`}>
                             M
                         </Avatar>
                         <span className="font-semibold absolute -bottom-1 -right-2">

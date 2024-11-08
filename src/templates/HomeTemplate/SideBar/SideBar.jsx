@@ -2,6 +2,7 @@ import { AppstoreOutlined, CalendarOutlined, EllipsisOutlined, HomeFilled, HomeO
 import { Avatar, Button, Menu, Popover } from 'antd';
 import React, { useState } from 'react';
 import PopOverListWorkSpace from './PopOverListWorkSpace';
+import PopoverSettingWorkSpaces from '../../../components/Popover/PopoverSettingWorkSpaces';
 
 const SideBar = () => {
     const [open, setOpen] = useState(false);
@@ -39,16 +40,27 @@ const SideBar = () => {
                         Workspaces
                     </div>
                     <div className='ml-32'>
-                        <EllipsisOutlined className='mr-3' />
+                        <Popover
+                        overlayInnerStyle={{padding: '0'}}
+                        arrow={false}
+                            content={<PopoverSettingWorkSpaces />}
+                            title=""
+                            trigger="click"
+                           
+                
+                        >
+
+                            <EllipsisOutlined className='mr-3' />
+                        </Popover>
                         <SearchOutlined />
                     </div>
                 </div>
                 <div className='flex justify-between'>
                     <Popover
-                        content={<PopOverListWorkSpace/>}
+                        content={<PopOverListWorkSpace />}
                         title=""
                         trigger="click"
-                        open={open}
+                        
                         onOpenChange={handleOpenChange}
                         width={"100%"}
                     >
@@ -62,7 +74,7 @@ const SideBar = () => {
                                     <HomeFilled />
 
                                 </span>
-                               
+
                             </div>
                             <div className='ml-3 leading-6 font-semibold'>
                                 Main workspace
