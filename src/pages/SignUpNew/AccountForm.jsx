@@ -4,10 +4,17 @@ import ButtonCustom from "../../components/Button/ButtonCustom";
 import ButtonGoogle from "../../components/Button/ButtonGoogle";
 import InputCustom from "../../components/Input/InputCustom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { dangNhapAction } from '../../redux/reducers/quanLyNguoiDungReducer';
 
 export default function AccountForm() {
+ 
+    const dispatch = useDispatch();
+    const email = useSelector(state => state.quanLyNguoiDung.email);
+    console.log('Email:', email);
+    const navigate = useNavigate();
     const validationSchema = Yup.object({
-        name: Yup.string()
+        fullname: Yup.string()
             .required("Full Name is required"),
         password: Yup.string()
             .min(8, "Password must be at least 8 characters")
@@ -18,9 +25,12 @@ export default function AccountForm() {
 
     return (
         <Formik
-            initialValues={{ name: '', password: '', accountName: '' }}
+            initialValues={{ fullname: '', password: '', email: email,  accountName: '', }}
             validationSchema={validationSchema}
             onSubmit={(values) => {
+                navigate('/invitemember');
+                const action = dangNhapAction(values);
+                dispatch(action);
                 console.log('Form values:', values);
             }}
         >
@@ -33,11 +43,11 @@ export default function AccountForm() {
                             <div className='mb-4'>
                                 <label htmlFor="name">Full Name</label>
                                 <Field
-                                    name="name"
+                                    name="fullname"
                                     placeholder="Enter your full name"
                                     component={InputCustom}
                                 />
-                                <ErrorMessage name="name" component="div" className="text-red-500 mt-1" />
+                                <ErrorMessage name="fullname" component="div" className="text-red-500 mt-1" />
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="password">Password</label>
@@ -58,12 +68,14 @@ export default function AccountForm() {
                                 />
                                 <ErrorMessage name="accountName" component="div" className="text-red-500 mt-1" />
                             </div>
+                            <button type='submit' className='bg-blue-500 text-white py-2 px-4 rounded mt-4'>Next -{'>'}</button>
                         </div>
                     </div>
                 </div>
                 <div className='w-5/12' style={{ backgroundColor: "#585afa" }}>
                     <img src="https://dapulse-res.cloudinary.com/image/upload/monday_platform/signup/signup-right-side-assets-new-flow/set-up-your-account.png" alt="Set up your account" />
                 </div>
+              
             </Form>
         </Formik>
     );

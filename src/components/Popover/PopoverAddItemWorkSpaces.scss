@@ -1,0 +1,20 @@
+.popover-add-item-workspaces{
+    .ant-menu{
+        border-radius: 8px;
+    .ant-menu-item{
+        @apply flex items-center space-x-2 ;
+        padding-left: 10px;
+        padding-inline-start: 10px !important;
+        height: 30px;
+        line-height: 30px;
+        
+        svg{
+            width: 16px; 
+            height: 16px;
+            path{
+                fill: #676879;
+            }
+        }
+    }
+}
+}

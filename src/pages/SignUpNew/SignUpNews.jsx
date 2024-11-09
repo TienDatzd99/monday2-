@@ -4,29 +4,35 @@ import ButtonCustom from "../../components/Button/ButtonCustom";
 import ButtonGoogle from "../../components/Button/ButtonGoogle";
 import InputCustom from "../../components/Input/InputCustom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { updateEmailAction } from '../../redux/reducers/quanLyNguoiDungReducer';
+import { useEffect } from 'react';
 const SignUpNews = () => {
 
-    const navigate = useNavigate() 
-
-
+    const navigate = useNavigate()
+    const dispatch = useDispatch();
     const validationSchema = Yup.object({
         email: Yup.string()
             .email('Invalid email format')
             .required('Email is required'),
     });
 
+
+
     return (
         <Formik
             initialValues={{ email: '' }}
             validationSchema={validationSchema}
             onSubmit={(values) => {
-                navigate("/accountForm")
+                dispatch(updateEmailAction(values.email));
+                navigate('/accountform');
                 console.log('Form values:', values);
             }}
         >
-           
-                <Form className='h-screen flex'>
-                    <div className='content_signup w-7/12 bg-white flex flex-col items-center justify-center'>
+
+            <Form className='h-screen flex'>
+                <div className='content_signup w-7/12 bg-white flex flex-col items-center justify-center'>
+                    <div className='flex flex-1  flex-col justify-center' >
                         <div>
                             <h1 className="font-medium text-5xl mb-5 flex justify-center">
                                 Welcome to monday.com
@@ -34,7 +40,8 @@ const SignUpNews = () => {
                             <div className="flex justify-center">
                                 <p className="mb-14 text-xl">Get started - it{"'"}s free. No credit card needed.</p>
                             </div>
-
+                        </div>
+                        <div>
                             <ButtonGoogle />
                             <div className="my-5 flex justify-center">
                                 <div className="line_cross border-t-2 w-full mt-3"></div>
@@ -55,7 +62,7 @@ const SignUpNews = () => {
                                 />
                             </div>
 
-                            <ButtonCustom content="Continue" type="submit"  />
+                            <ButtonCustom content="Continue" type="submit" />
                             <div className="grid justify-center text-xl">
                                 <p className="items-center pl-2">By proceeding, you agree to the</p>
                                 <p>
@@ -65,12 +72,22 @@ const SignUpNews = () => {
                             </div>
                         </div>
                     </div>
-
-                    <div className='image_signup w-5/12 flex items-center' style={{ backgroundColor: "#585afa" }}>
-                        <img className="" src="/public/1692552403544.png" alt="signup" />
+                    <div className='mb-16'>
+                        Already have an account?
+                        <span className='text-cyan-600 cursor-pointer hover:underline' onClick={
+                            () => {
+                                navigate('/login')
+                            }
+                        }> Log in</span>
                     </div>
-                </Form>
-   
+                </div>
+
+                <div className='image_signup w-5/12 flex items-center' style={{ backgroundColor: "#585afa" }}>
+                    <img className="" src="/public/1692552403544.png" alt="signup" />
+                </div>
+
+            </Form>
+
         </Formik>
     );
 }

@@ -1,9 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
+import quanLyNguoiDungReducer from './reducers/quanLyNguoiDungReducer';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
-    hoTen:()=>{
-        return 'CyberSoft'
-    }
+    quanLyNguoiDung: quanLyNguoiDungReducer,
   },
-})
+});
+
+export default store;

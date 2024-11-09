@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { MailOutlined } from '@ant-design/icons'
 import { Menu } from 'antd'
 import './PopoverSettingWorkSpaces.scss'
@@ -6,38 +7,7 @@ const PopoverSettingWorkSpaces = () => {
     const items = [
         {
           label: 'work managerment overview',
-        //   children: [
-        //     {
-        //       key: '1-1',
-        //       label: 'Item 1',
-        //       type: 'group',
-        //       children: [
-        //         {
-        //           key: '1',
-        //           label: 'Option 1',
-        //         },
-        //         {
-        //           key: '2',
-        //           label: 'Option 2',
-        //         },
-        //       ],
-        //     },
-        //     {
-        //       key: '1-2',
-        //       label: 'Item 2',
-        //       type: 'group',
-        //       children: [
-        //         {
-        //           key: '3',
-        //           label: 'Option 3',
-        //         },
-        //         {
-        //           key: '4',
-        //           label: 'Option 4',
-        //         },
-        //       ],
-        //     },
-        //   ],
+
         },
         {
             type: 'divider',

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import {
     DesktopOutlined,
@@ -8,6 +9,7 @@ import {
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import SideBar from './SideBar/SideBar';
+import HeaderMonday from './Header/HeaderMonday';
 
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
@@ -43,14 +45,20 @@ const HomeTemplate = () => {
         >
 
             <Header
+
+
                 style={{
+
+                    maxHeight: "48px",
                     padding: 0,
                     background: "#ECEFF8",
                 }}
-            />
+            >
+                <HeaderMonday />
+            </Header>
             <Layout style={{ backgroundColor: "#ECEFF8" }}>
                 <Sider className='bg-white' collapsible collapsed={collapsed} onCollapse={setCollapsed}
-                width={300}>
+                    width={300}>
                     <SideBar />
                 </Sider>
 
@@ -60,14 +68,7 @@ const HomeTemplate = () => {
                         margin: '0 16px',
                     }}
                 >
-                    <Breadcrumb
-                        style={{
-                            margin: '16px 0',
-                        }}
-                    >
-                        <Breadcrumb.Item>User</Breadcrumb.Item>
-                        <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                    </Breadcrumb>
+
                     <div
                         style={{
                             padding: 24,
@@ -81,7 +82,7 @@ const HomeTemplate = () => {
                 </Content>
 
             </Layout>
-        </Layout>
+        </Layout >
     );
 };
 export default HomeTemplate;

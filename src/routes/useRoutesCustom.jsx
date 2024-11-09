@@ -6,6 +6,7 @@ import AccountForm from "../pages/SignUpNew/AccountForm";
 import InviteMember from "../pages/InviteMember/InviteMember";
 import CreatBoardTemplate from "../templates/CreatBoardTemplate/CreatBoardTemplate";
 import HomeTemplate from "../templates/HomeTemplate/HomeTemplate";
+import LoginLayout from "../pages/LoginLayout/LoginLayout";
 
 function useRoutesCustom() {
   let element = useRoutes([
@@ -26,6 +27,7 @@ function useRoutesCustom() {
     { path: "invitemember", element: <InviteMember /> },
     { path: "Board", element: <CreatBoardTemplate /> },
     { path: "dashboard", element: <HomeTemplate /> },
+    { path: "Login", element: <LoginLayout /> },
   ]);
 
   return element;
